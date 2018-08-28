@@ -4,29 +4,26 @@ using System.Text;
 
 namespace NameParser2.Names
 {
-    class FirstName
+    class LastName
     {
         public string Name { get; private set; }
 
         public void GetName()
         {
-            Console.WriteLine("What is your first name?");
+            Console.WriteLine("What is your last name?");
             Name = Console.ReadLine();
         }
 
         public void PrintName()
         {
+            var lastNameWithSpaces = "";
 
-            foreach (var letter in Name)
+            foreach (var letter in Name.ToUpper())
             {
-                Console.WriteLine(letter);
+                lastNameWithSpaces += letter + "";
             }
-        }
 
-        public void GetAndPrint()
-        {
-            GetName();
-            PrintName();
+            Console.WriteLine(lastNameWithSpaces.Trim());
         }
     }
 }

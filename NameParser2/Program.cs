@@ -11,39 +11,19 @@ namespace NameParser2
             firstName.GetName();
             firstName.PrintName();
 
-            
-            Console.WriteLine("What is your last name?");
-            var lastName = Console.ReadLine();
-            var lastNameWithSpaces = "";
+            var lastName = new LastName();
+            lastName.GetName();
+            lastName.PrintName();
 
-            foreach (var letter in lastName.ToUpper())
-            {
-                lastNameWithSpaces += letter + "";
-            }
+            var middleName = new MiddleName();
+            middleName.GetName(firstName.Name);
+            middleName.PrintName();
 
-            Console.WriteLine(lastNameWithSpaces.Trim());
 
-            Console.WriteLine("Do you have a middle name? (y/n)");
-            var hasMiddleName = Console.ReadLine();
-            var middleName = "";
-
-            if (hasMiddleName == "y")
-            {
-                Console.WriteLine("What is it?");
-                middleName = Console.ReadLine();
-                var i = 0;
-
-                foreach (var letter in middleName)
-                {
-                    Console.WriteLine(letter.ToString().PadLeft(++i));
-                }
-            }
-            else
-            {
-                Console.WriteLine($"{firstName}, that is the saddest thing i have ever heard.");
-            }
-            Console.WriteLine($"Goodbye {firstName} {middleName} {lastName}. Press enter to exit.");
+            Console.WriteLine($"Goodbye {firstName.Name} {middleName.Name} {lastName.Name}. Press enter to exit.");
             Console.ReadLine();
+
+
         }
     }
 }
