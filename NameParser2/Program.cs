@@ -1,4 +1,5 @@
 ﻿using System;
+using NameParser2.Names;
 
 namespace NameParser2
 {
@@ -6,14 +7,11 @@ namespace NameParser2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your first name?");
-            var firstName = Console.ReadLine();
+            var firstName = new FirstName();
+            firstName.GetName();
+            firstName.PrintName();
 
-            foreach (var letter in firstName)
-            {
-                Console.WriteLine(letter);
-            }
-
+            
             Console.WriteLine("What is your last name?");
             var lastName = Console.ReadLine();
             var lastNameWithSpaces = "";
