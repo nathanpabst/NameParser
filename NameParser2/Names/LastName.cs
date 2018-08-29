@@ -4,15 +4,10 @@ using System.Text;
 
 namespace NameParser2.Names
 {
-    class LastName
+    class LastName : NameBase
     {
-        public string Name { get; private set; }
-
-        public void GetName()
-        {
-            Console.WriteLine("What is your last name?");
-            Name = Console.ReadLine();
-        }
+        public LastName() : base("last")
+        {}
 
         public void PrintName()
         {

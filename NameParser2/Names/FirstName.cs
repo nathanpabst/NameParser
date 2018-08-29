@@ -4,29 +4,18 @@ using System.Text;
 
 namespace NameParser2.Names
 {
-    class FirstName
+    class FirstName : NameBase
     {
-        public string Name { get; private set; }
-
-        public void GetName()
-        {
-            Console.WriteLine("What is your first name?");
-            Name = Console.ReadLine();
-        }
+        public FirstName() : base("first")
+        {}
 
         public void PrintName()
         {
-
             foreach (var letter in Name)
             {
                 Console.WriteLine(letter);
             }
         }
 
-        public void GetAndPrint()
-        {
-            GetName();
-            PrintName();
-        }
     }
 }

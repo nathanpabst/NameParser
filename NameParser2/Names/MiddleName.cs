@@ -6,19 +6,26 @@ namespace NameParser2.Names
 {
     class MiddleName
     {
-        public string Name { get; private set; } = "";
+        private readonly FirstName _firstName;
 
+        public string Name { get; private set; }
 
-        public void GetName(string firstName)
+        public MiddleName(FirstName firstName)
+        {
+            Name = "";
+            _firstName = firstName;
+        }
+
+        public void GetName()
         {
             if (userHasMiddleName())
             {
                 Console.WriteLine("What is it?");
-                Name = Console.ReadLine();           
+                Name = Console.ReadLine();
             }
             else
             {
-                Console.WriteLine($"{firstName}, that is the saddest thing i have ever heard.");
+                Console.WriteLine($"{_firstName.Name}, that is the saddest thing i have ever heard.");
             }
         }
 
@@ -38,6 +45,6 @@ namespace NameParser2.Names
                 Console.WriteLine(letter.ToString().PadLeft(++i));
             }
         }
-        
+
     }
 }

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace NameParser2.Names
+{
+    abstract class NameBase
+    {
+
+        private readonly string _whichName;
+
+        public string Name { get; private set; }
+
+        public NameBase(string whichName)
+        {
+            _whichName = whichName;
+        }
+
+        public void GetName()
+        {
+            Console.WriteLine($"Enter your {_whichName} name?");
+            Name = Console.ReadLine();
+        }
+    }
+}
