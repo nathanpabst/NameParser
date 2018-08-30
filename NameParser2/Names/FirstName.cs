@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NameParser2.Names
 {
@@ -9,7 +7,7 @@ namespace NameParser2.Names
         public FirstName() : base("first")
         {}
 
-        public void PrintName()
+        public override void PrintName()
         {
             foreach (var letter in Name)
             {
